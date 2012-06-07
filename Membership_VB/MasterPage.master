@@ -1,0 +1,55 @@
+<%@ Master Language="VB" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>MasterPages Demo</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body leftmargin="0" topmargin="0">
+    <form id="form1" runat="server">
+    <div><table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="2" style="border-bottom: olive thick solid; height: 46px; background-color: darkgray">
+                    <asp:Image runat="server" ImageAlign="absmiddle" ImageUrl="~/Images/logo.gif" />
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                    </asp:SiteMapPath>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" style="width: 169px; height: 54px; border-bottom: silver thin solid; text-align: center;">
+                    <asp:Image runat="server" ImageUrl="~/Images/home.gif" /></td>
+                <td colspan="1" style="height: 54px; width: 100%; border-bottom: silver thin solid;">
+                    <h2 style="text-align: center">MasterPages Demo</h2>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top; width: 169px; height: 300px; background-color: lightgrey">
+                    <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Arrows">
+                        <ParentNodeStyle Font-Bold="False" />
+                        <HoverNodeStyle Font-Underline="False" ForeColor="#5555DD" BackColor="Yellow" />
+                        <SelectedNodeStyle Font-Underline="False" ForeColor="#5555DD" Font-Bold="True" />
+                        <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
+                            NodeSpacing="0px" VerticalPadding="0px" />
+                    </asp:TreeView>
+                </td>
+                <td style="vertical-align: top; padding-top:10px; padding-left:10px">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 40px">
+                    Copyright © 2005 Some Company, Inc.</td>
+            </tr>
+        </table>
+    </div>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+    </form>
+</body>
+</html>
